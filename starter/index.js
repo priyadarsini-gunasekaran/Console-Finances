@@ -104,53 +104,55 @@ for (var i = 0; i < finances.length; i++) {
 var earningsArray = finances.map((el) => el[1]);
 
 // Step02 - Using for loop on earningsArray calculated the difference between earnings from month to month
-const result = [];
+var result = [];
 for (let i = 1; i < earningsArray.length; i++) {
   result.push(earningsArray[i] - earningsArray[i - 1]);
 }
-
 // Step03 - Again using for loop summed up the total change in profits 
 var sum = 0;
 for (let i = 0; i < result.length; i++) {
     sum += result[i]
     }
-
 // Step-04 Evaluated average of change in profilt/loss over the entire period
 averageChange = sum / result.length
 
-
 // Task04 - The greatest increase in profits (date and amount) over the entire period.
 // Task05 - The greatest decrease in losses (date and amount) over the entire period.
-const maxMonth = {
+
+var newData = [];
+
+for (var i = 0; i < finances.length; i++) {
+    newData.push([finances[i][0], finances[i][1], result[i-1]]);
+}
+
+var maxMonth = {
     monthName: '',
     profit: 0,
   };
   
-const minMonth = {
+var minMonth = {
     monthName: '',
     profit: 0,
   };
 
-finances.forEach((month) => {
-    if (month[1] > maxMonth.profit) {
-      maxMonth.monthName = month[0];
-      maxMonth.profit = month[1];
-    }
-  
-    if (month[1] < minMonth.profit) {
-      minMonth.monthName = month[0];
-      minMonth.profit = month[1];
-    }
-  
-    return { maxMonth, minMonth };
-  });
+for (var i = 1; i < newData.length; i++) {
+    if (newData[i][2] > maxMonth.profit) {
+        maxMonth.monthName = newData[i][0];
+        maxMonth.profit = newData[i][2];
+      }
+    
+    if (newData[i][2] < minMonth.profit) {
+        minMonth.monthName = newData[i][0];
+        minMonth.profit = newData[i][2];
+      }
+}
 
 // Task06 - Print the analysis to the console.
 console.log("Financial Analysis");
-console.log("----------------------------");
+console.log("-----------------------------------------------------");
 console.log("Total Months                : " + totalMonths);
 console.log("Total                       :$" + netTotal);
 console.log("Average Change              :$" + averageChange.toFixed(2));
 console.log("Greatest Increase in Profits: " + maxMonth.monthName + " ($" + maxMonth.profit + ") ");
 console.log("Greatest Decrease in Profits: " + minMonth.monthName + " ($" + minMonth.profit + ") ");
-console.log("----------------------------");
+console.log("-----------------------------------------------------");
