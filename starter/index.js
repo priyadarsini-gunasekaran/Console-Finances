@@ -89,9 +89,19 @@ var finances = [
 
 // Task01 - The total number of months included in the dataset.
 var totalMonths = 0;
-for(var i = 0; i < finances.length; ++i){
+for(var i = 0; i < finances.length; i++){
     totalMonths++;
 }
+
+// Task02 - The net total amount of Profit/Losses over the entire period.
+var netTotal = 0;
+for (var i = 0; i < finances.length; i++) {
+    netTotal += finances[i][1];
+}
+
+// Task06 - Print the analysis to the console.
 console.log("Financial Analysis");
 console.log("----------------------------");
 console.log("Total Months: " + totalMonths);
+console.log("Total       :$" + netTotal);
+console.log("----------------------------");
