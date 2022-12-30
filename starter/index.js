@@ -99,9 +99,13 @@ for (var i = 0; i < finances.length; i++) {
     netTotal += finances[i][1];
 }
 
+// Task03 - The average of the **changes** in Profit/Losses over the entire period.
+var averageChange = netTotal/totalMonths;
+
 // Task06 - Print the analysis to the console.
 console.log("Financial Analysis");
 console.log("----------------------------");
-console.log("Total Months: " + totalMonths);
-console.log("Total       :$" + netTotal);
+console.log("Total Months   : " + totalMonths);
+console.log("Total          :$" + netTotal);
+console.log("Average Change :$" + averageChange.toFixed(2));
 console.log("----------------------------");
