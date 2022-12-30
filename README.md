@@ -32,9 +32,9 @@ Step02 - the Average Change value was printed to the nearest 100th using JS meth
 
 ![Screenshot](./financial_analysis.jpg)
 
-* The URL of the deployed application.
+* The URL of the deployed application: https://priyadarsini-gunasekaran.github.io/Console-Finances/starter/index.html
 
-* The URL of the GitHub repository.
+* The URL of the GitHub repository: https://github.com/priyadarsini-gunasekaran/Console-Finances
 
 ---
 
